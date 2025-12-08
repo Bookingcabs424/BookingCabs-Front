@@ -1,0 +1,502 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .invoice-td-class { padding: 10px; }
+        .vertical-align-top { vertical-align: top; }
+        .pull-right { float: right; }
+        .new1 { text-align: right; }
+        .no-padding { padding: 0; }
+        .padding-left0 { padding-left: 0; }
+        .bgnone { background: none; }
+        .mapcantiner_inner1 { padding: 5px; }
+        .flex_column_between{ display: flex; flex-direction: column; justify-content: space-between;}
+        ul { margin-left: 20px; }
+    </style>
+</head>
+<body>
+<div
+        ref={componentRef}
+        className="w-full py-3 border border-gray-300 p-3"
+      >
+<!-- Title -->
+<h2 style="
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #D1D5DB; 
+  padding-bottom: 0.25rem;
+">
+  QUOTATION
+</h2>
+<p>
+
+</p>
+
+<div style="
+  margin-left: 'auto';
+  margin-right: 'auto';
+  background-color: 'white';
+  padding-top: 1.5rem;
+  padding-bottom: 0.75rem;
+">
+
+  <div style="flex-direction: column; background-color:'#000';">
+  <div style="
+      text-align: right;
+      font-size: 10px;
+      float: right;
+    ">
+      <p style="margin: 0; display: flex;">
+        <strong>Itinerary No.:</strong> <%= itinerary_id || "" %>
+      </p>
+      <p style="margin: 0; display: flex;">
+        <strong>Quotation No.:</strong> <%= ref || "" %>
+      </p>
+      <p style="margin: 0; display: flex;">
+        <strong>Quotation Date:</strong> <%= booking_date || "" %>
+      </p>
+      <p style="margin: 0; display: flex;">
+        <strong>Quotation Time:</strong> <%= booking_time || "" %>
+      </p>
+    
+  </div>
+
+  <div style="
+    display: 'flex';
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  ">
+    <div style="
+      margin-left: 1rem;
+      margin-right: 1rem;
+    ">
+      <img src="https://bookingcabs.com/images/logo.png" alt="Logo" width="160" height="45" />
+    </div>
+</div>
+
+<div style="
+    text-align: right;
+    font-size: 10px;
+    margin-bottom: 1rem;
+    float: right;
+  ">
+    <p>Last Voucher Date: <%= booking_date || "" %></p>
+  </div>
+
+
+  
+  </div>
+
+  <!-- Greeting Section -->
+  <div style="font-size: 10px; margin-bottom: 0.5rem;">
+  <p style="margin: 0;">
+    Dear Mr <%= first_name || "" %> <%= last_name || "" %>,
+  </p>
+  <p style="margin: 0;">
+    Greetings from <strong><%= company_name || "Bookingcabs" %> !!</strong>
+  </p>
+  <p style="margin: 0;">
+    This is <strong><%= first_name || "" %></strong> and I will be working
+    with you to plan your trip to <strong><%= city_name || "" %></strong>.
+  </p>
+  <p style="margin: 0; margin-bottom: 5rem;">
+    Please find below details for your trip and feel free to call me at 
+    <strong>
+      <%= mobilePrefix || 91 %>-<%= user_mobile || "9876543210" %>
+    </strong>.
+  </p>
+</div>
+
+</div>
+
+<!-- Table Section -->
+<table style="
+  width: 100%;
+  table-layout: auto;
+  border: 1px solid #D1D5DB; /* gray-300 */
+  margin-bottom: 0.75rem;
+  margin-bottom: 2rem; /* print-mb-20 */
+  border-collapse: collapse;
+">
+  <thead>
+    <tr style="
+      background-color: #B91C1C; /* red-700 */
+      color: white;
+      font-size: 10px;
+      width: 100%;
+    ">
+      <th style="border: 1px solid #D1D5DB; padding: 0.25rem; width: 14%;">Date</th>
+      <th style="border: 1px solid #D1D5DB; padding: 0.25rem; width: 19%;">Destination</th>
+      <th style="border: 1px solid #D1D5DB; padding: 0.25rem; width: 18%;">Vehicle Type</th>
+      <th style="border: 1px solid #D1D5DB; padding: 0.25rem; width: 10%;">Adult</th>
+      <th style="border: 1px solid #D1D5DB; padding: 0.25rem; width: 10%;">Child</th>
+      <th style="border: 1px solid #D1D5DB; padding: 0.25rem; width: 10%;">Infant</th>
+      <th style="border: 1px solid #D1D5DB; padding: 0.25rem; width: 10%;">Luggage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="font-size: 10px;">
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; width: 14%;">
+        <%= booking_date || "" %>
+      </td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; width: 15%;">
+        <%= city_name || "" %>
+      </td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; width: 18%;">
+        <%= vehicle || "" %>
+      </td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; width: 10%;">
+        <%= adults || "" %>
+      </td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; width: 10%;">
+        <%= childs || 0 %>
+      </td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; width: 10%;">
+        <%= childs || 0 %>
+      </td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; width: 10%;">
+        <%= luggages || 0 %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Pickup/Drop Details Table -->
+<table style="width: 100%; table-layout: auto; border: 1px solid #D1D5DB; font-size: 10px; margin-bottom: 1rem;">
+  <tbody style="width: 100%;">
+    <!-- Guest Information -->
+    <tr>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; font-weight: 600;">Guest Name</td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem;"><%= clientname || "" %></td>
+
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; font-weight: 600;">Nationality</td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem;"><%= user_nationality || "" %></td>
+    </tr>
+
+    <tr>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; font-weight: 600;">Mobile</td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem;"><%= client_mobile || "" %></td>
+
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; font-weight: 600;">Email</td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem;"><%= client_email || "" %></td>
+    </tr>
+
+    <!-- Pickup Details -->
+    <tr>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; font-weight: 600;">Pickup Date / Time</td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem;">
+        <%= booking_date %><br /><%= booking_time || "" %>
+      </td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; font-weight: 600;">Pickup Address</td>
+      <td colspan="3" style="border: 1px solid #D1D5DB; padding: 0.25rem;"><%= pickup_area || "" %></td>
+    </tr>
+
+    <!-- Drop Details -->
+    <tr>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; font-weight: 600;">Drop Date</td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem;"><%= drop_date || "" %></td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; font-weight: 600;">Drop Address</td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem;"><%= drop_address || "" %></td>
+    </tr>
+
+    <!-- Package Details -->
+    <tr>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; font-weight: 600;">Package</td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem;">
+        <%= booking_type || "" %><br />
+        <%= local_pkg_name || "" %>
+      </td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; font-weight: 600;">Travel Duration</td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem;"><%= 6 || "" %></td>
+    </tr>
+
+    <!-- Expected Distance & Extra Charges -->
+    <tr>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem; font-weight: 600;">Expected Distance</td>
+      <td style="border: 1px solid #D1D5DB; padding: 0.25rem;"><%= approx_after_km || "" %> Km</td>
+
+      <td colspan="3" style="padding: 0;">
+        <table style="width: 100%;">
+          <tr>
+            <td style="padding: 0.25rem; font-weight: 600; width: 50%;">Extra Km</td>
+            <td style="padding: 0.25rem;"><%= approx_distance_charge || "" %>/KM</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.25rem; font-weight: 600; width: 50%;">Extra Hr</td>
+            <td style="padding: 0.25rem;"><%= approx_hour_charge || "" %>/Hr</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="margin-top: 0.75rem; margin-bottom: 0.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+  
+    <table style="width: 100%; border: 1px solid #D1D5DB; font-size: 10px; table-layout: fixed; background-color: white; margin-bottom: 2.5rem;">
+      <tbody>
+        <tr>
+          <td style="padding: 0.25rem; width: 50%;">
+            <span style="font-weight: 600;"><%= vehicle || "" %></span>
+          </td>
+
+       
+            <td style="padding: 0.25rem; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 600;">Total Cost <%= currency || "" %>:</span>
+             <span> <%= amount %></span>
+            </td>
+        
+        </tr>
+
+        <tr>
+          <td rowspan="4" style="vertical-align: top;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin: 0 0.75rem;">
+              <div style="display: 'flex'; flex-direction: 'column'; gap: 0.25rem; justify-content: start; margin-top: 1.25rem;">
+               <% if (vehicleImage) { %>
+                                                    <img style="object-fit: contain;" src="<%= decodeURIComponent(vehicleImage) %>" width="120px" height="45px" />
+                                                <% } else { %>
+                                                    <p>N/A</p>
+                                                <% } %>
+                
+                <h1 style="text-align: center; font-size: 12px; color: #4B5563; margin: 0;">
+                  <%= vehicle || "" %>
+                </h1>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 0.25rem; margin-top: 0.25rem; justify-content: center; gap: 0.25rem;">
+                <div style="display: 'flex'; flex-direction: 'column'; gap: 2px; text-align: center;">
+                  <div style="padding: 3px; border-radius: 9999px; border: 1px solid #ccc; width: 1.25rem; height: 1.25rem; display: flex; align-items: center; justify-content: center">
+                    <span style="color: #6B7280; display: flex; align-items: center; justify-content: 'space-between';"><%= personemoji %></span>
+                  </div>
+                  <span style="font-size: 10px; color: #4B5563;">6+D</span>
+                </div>
+
+                <div style="display: 'flex'; flex-direction: 'column'; gap: 2px; text-align: center;">
+                  <div style="padding: 3px; border-radius: 9999px; border: 1px solid #ccc; width: 1.25rem; height: 1.25rem; display: flex; align-items: center; justify-content: center;">
+                    <span style="width: 0.75rem; height: 0.5rem; color: #6B7280; cursor: pointer;"><%= luggageemoji %></span>
+                  </div>
+                  <span style="font-size: 10px; color: #4B5563;">3+1</span>
+                </div>
+
+                <div style="display: 'flex'; flex-direction: 'column'; gap: 2px; text-align: center;">
+                  <div style="padding: 3px; border-radius: 9999px; border: 1px solid #ccc; width: 1.25rem; height: 1.25rem; display: flex; align-items: center; justify-content: center;">
+                    <span style="width: 0.75rem; height: 0.5rem; color: #6B7280; cursor: pointer;"><%= acemoji %></span>
+                  </div>
+                  <span style="font-size: 10px; color: #4B5563;">AC</span>
+                </div>
+
+                <div style="display: 'flex'; flex-direction: 'column'; gap: 2px; text-align: center;">
+                  <div style="padding: 3px; border-radius: 9999px; border: 1px solid #ccc;width: 1.25rem; height: 1.25rem; display: flex; align-items: center; justify-content: center;">
+                    <span style="width: 0.75rem; height: 0.5rem; color: #6B7280; cursor: pointer;"><%= petrolemoji %></span>
+                  </div>
+                  <span style="font-size: 10px; color: #4B5563;">Petrol</span>
+                </div>
+              </div>
+            </div>
+          </td>
+
+      
+            <td style="padding: 0.25rem; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 600;">Extras:</span>
+              <span><%= extra_price || 0 %></span>
+            </td>
+         
+        </tr>
+
+     
+          <tr>
+            <td style="padding: 0.25rem; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 600;">Discount Price:</span>
+             <span> <%= discount_price || 0 %></span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0.25rem; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 600;">Total Tax:</span>
+            <span><%= total_tax_price || 0 %><span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0.25rem; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: 600;">Total (including GST):</span>
+              <span><%= estimated_final_price || 0 %><span>
+            </td>
+          </tr>
+      
+      </tbody>
+    </table>
+
+</div>
+
+<div style="margin-top: 0.75rem; border: 1px solid #D1D5DB; padding: 1rem; font-size: 10px;"> 
+  <tr>
+                                    <td colspan="2">
+                                        <div style="padding: 5px;">
+                                            <div>
+                                                <strong>Inclusions & Exclusions</strong><br/>
+                                                <strong>Inclusions</strong>
+                                                <ul style="list-style:circle; margin-left:10px;">
+                                                    <li>Distance <strong>Package <%= local_pkg_name || 'N/A' %></strong> Km for the exact Itinerary listed above</li>
+                                                    <li>Distance <%= approx_after_km || 0 %> Km <strong> as per Package </strong> for the exact Itinerary listed above</li>
+                                                    <li>No Route Deviation allowed Unless Listed in Itinerary</li>
+                                                    <li>Driver Allowance (Night Charges) Applicable is the Vehicle</li>
+                                                    <li>State Taxes ( As Per Actual)</li>
+                                                    <li>Toll Taxes ( As Per Actual)</li>
+                                                    <li>GST</li>
+                                                </ul>
+                                                <strong>Exclusion</strong>
+                                                <ul style="list-style:circle; margin-left:10px;">
+                                                    <li>Toll Taxes (Over and above cost Include)</li>
+                                                    <li>Parking ( As Per Actual)</li>
+                                                    <li>Night Pickup Allowance excluded</li>
+                                                    <li>Night Drop off Allowance excluded</li>
+                                                    <li>Peak Charges & Waiting Charges as per Tariff</li>
+                                                    <li>Driver Allowance (Night Charges) Applicable is the Vehicle</li>
+                                                </ul>
+                                                <h4><strong>Fare Rule</strong></h4>
+                                                <ul style="list-style:circle; margin-left:10px;">
+                                                    <li>Approx Distance <strong><%= local_pkg_name || 'N/A' %></strong> ( As Per Quote)</li>
+                                                    <li>Minimum Charged Distance <strong><%= minimum_charge || 0 %></strong> ( As per Min Distance)</li>
+                                                    <li>Per Km Rates <strong><%= approx_distance_charge || 0 %></strong> ( As Per Per Km Rates)</li>
+                                                    <% if (approx_hour_charge) { %>
+                                                        <li>Per Hour Rates <strong><%= approx_hour_charge %></strong> ( As Per Per Hrs Rates)</li>
+                                                    <% } %>
+                                                    <li>Driver Allowance <strong><%= night_rate_value || 0 %></strong> ( Per Day)</li>
+                                                </ul>
+                                                <strong>Extra Charges :- </strong>
+                                                Distance :- If you use Vehicle more than the Estimated Km (<strong><%= local_pkg_name || 'N/A' %></strong>) (? <%= approx_distance_charge || 0 %>) Per Extra Km Rates <% if (approx_hour_charge) { %> & ? <%= approx_hour_charge %> Per Extra Hrs <% } %> will be Charged.<br/>
+                                                Time :- If you drop the Vehicle after 23:00 Hrs extra Driver Allowance will be Applicable<br/>
+                                                <strong>Note :- </strong>
+                                                <ul style="list-style:circle; margin-left:10px;">
+                                                    <li>One Day Means One Calendar day from Midnight (<%= night_rate_begins || 'N/A' %> Midnight to <%= night_rate_ends || 'N/A' %> Mid Night).</li>
+                                                    <li>Kilometers ( Km) and Hours will be Calculated from Garage to Garage or Specified</li>
+                                                    <li>Air Con will be switch off in Hill Areas</li>
+                                                    <li>If Driver Drive Vehicle between <%= night_rate_begins || 'N/A' %> to <%= night_rate_ends || 'N/A' %>, Driver Allowance / Night Charges <strong><%= night_rate_value || 0 %></strong> will be Applicable</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+  
+ 
+                                <tr>
+                                    <td colspan="2">
+                                        <div>
+                                            <h4><strong>Cancellation Rule</strong></h4>
+                                            <table border="1" width="100%" cellpadding="2" cellspacing="0">
+                                                <% if (booking_cancellation_rule) { 
+                                                    try {
+                                                        const rules = typeof booking_cancellation_rule === 'string' ? JSON.parse(booking_cancellation_rule) : booking_cancellation_rule;
+                                                        if (rules && rules.length > 0) {
+                                                            rules.forEach(function(rule) { %>
+                                                                <tr>
+                                                                    <td><%= rule.name || 'N/A' %></td>
+                                                                    <td>
+                                                                        <% if (rule.cancellation_type === 'Value') { %>
+                                                                            <%= rule.currency_icon || '?' %><%= rule.cancellation_value || 0 %>
+                                                                        <% } else { %>
+                                                                            <%= rule.cancellation_value || 0 %> <%= rule.cancellation_type || 'N/A' %>
+                                                                        <% } %>
+                                                                    </td>
+                                                                    <td><%= rule.currency_icon || '?' %> <%= rule.cancellation_charge || 0 %></td>
+                                                                </tr>
+                                                            <% }); 
+                                                        } else { %>
+                                                            <tr><td colspan="3">No cancellation rules defined</td></tr>
+                                                        <% }
+                                                    } catch (e) { %>
+                                                        <tr><td colspan="3">Error parsing cancellation rules</td></tr>
+                                                    <% }
+                                                } else { %>
+                                                    <tr><td colspan="3">No cancellation rules available</td></tr>
+                                                <% } %>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+ <tr>
+                                    <td colspan="2">
+                                        <h4><strong>Remark</strong></h4>
+                                        <div>
+                                            <%= remark || 'No remarks' %>
+                                        </div>
+                                        <p><strong>Thank you for your interest in <%= company_name || 'N/A' %>. If you have any questions, wish to make changes to the itinerary or confirm this booking please call us at 91-<%= mobile_no || 'N/A' %></strong></p>
+                                        <p>Your personal trip manager,</p>
+                                        <p><%= user_name || 'N/A' %><br/>91-<%= user_mobile || 'N/A' %></p>
+                                        <p>Thanks & Regards !<br/></p>
+                                        
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <div style="width: 40%;">
+                                                <p>
+                                                    <%= domain_name || 'N/A' %><br/>
+                                                    <%= company_name || 'N/A' %><br/>
+                                                    N/A<br/>
+                                                    Tel: <%= landline_no || 'N/A' %>, Mob.: <%= mobile_no || 'N/A' %><br/>
+                                                    Website: N/A<br/>
+                                                    Email: <%= email || 'N/A' %><br/>
+                                                    PAN NO.: N/A, GST NO.:<%= gst_no || 'N/A' %>
+                                                </p>
+                                            </div>
+                                            <div style="width: 20%; text-align: center;">
+                                                <p><strong>UPI</strong></p>
+                                                <% if (upIdImagePath) { %>
+                                                    <img src="<%= upIdImagePath %>" height="123px" width="123px" />
+                                                <% } else { %>
+                                                    <p>N/A</p>
+                                                <% } %>
+                                            </div>
+                                            <div style="width: 40%; text-align: right;">
+                                                <p><strong>Bank Details</strong></p>
+                                                <p>
+                                                    <strong>Name:</strong> <%= user_beneficiary_name || 'N/A' %><br/>
+                                                    <strong>Bank Name:</strong> <%= user_bank_name || 'N/A' %><br/>
+                                                    <strong>Account No:</strong> <%= user_ac_no || 'N/A' %><br/>
+                                                    <strong>IFSC/SWIFT:</strong> <%= user_ifsc_code || 'N/A' %><br/>
+                                                    <strong>Branch:</strong> <%= user_bank_branch || 'N/A' %><br/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+<!--  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Dhanteras!!</title>
+</head>
+<body style="margin:0; padding:0; font-family: Arial, sans-serif; background:#f9f9f9;">
+
+  <!-- Main container -->
+  <div style="max-width:100%; margin:0 auto; padding:0;">
+    <img 
+      src="https://bookingcabs.in/public/dhanteras1.jpeg" 
+      alt="Main Background"
+      width="600"  
+      style="display:block;  max-width:600px; height:auto;"
+    >
+  </div>
+
+</body>
+</html>
