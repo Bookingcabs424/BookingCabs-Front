@@ -1,0 +1,115 @@
+"use client";
+import SightSeeingCard from "@/components/SightSeeingCard";
+import Image from "next/image";
+
+export default function ReviewPage() {
+  return (
+    <div className="flex flex-col items-center justify-center">
+      <div className="px-6 py-9 w-[85%]">
+        <div className="grid grid-cols-12">
+          <div className="col-span-9">
+            <h1>Car & Pickup Details</h1>
+            <div className="grid grid-cols-6 border border-gray-300 p-2">
+              <div className="col-span-2">
+                <div className="w-full h-[60px] relative sm:h-[75px] items-start">
+                  <Image
+                    src="/images/car_model/Economy (Hatch Back)/Baleno.png"
+                    alt="Slider Background"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+                <div className="flex flex-col items-center justify-center">
+                  <span className="text-[13px]">AC | 4 Seats | 3 Luggage</span>
+                  <span className="text-[13px]">SEDAN</span>
+                  <span className="text-[13px]">Dzire, Etios or similar</span>
+                </div>
+              </div>
+              <div className="col-span-1">
+                <div className="flex flex-col items-center justify-center">
+                  <span className="text-[13px]">AC | 4 Seats | 3 Luggage</span>
+                  <span className="text-[13px]">SEDAN</span>
+                  <span className="text-[13px]">Dzire, Etios or similar</span>
+                </div>
+              </div>
+            </div>
+
+            <h1>
+              Sight Seeing Details{" "}
+              <span className="text-gray-500 cursor-pointer hover:text-gray-600">
+                (Modify)
+              </span>
+            </h1>
+            <h1 className="my-4">Delhi Sightseeing</h1>
+            <div className="grid grid-cols-6 gap-4">
+              {Array(6)
+                .fill("a")
+                .map((item, idx) => (
+                  <SightSeeingCard key={idx} />
+                ))}
+            </div>
+            <h1 className="my-4">Agra Sightseeing</h1>
+            <div className="grid grid-cols-6 gap-4">
+              {Array(3)
+                .fill("a")
+                .map((item, idx) => (
+                  <SightSeeingCard key={idx} />
+                ))}
+            </div>
+
+            <h1 className="my-4">Driver & Guide Detail</h1>
+            <div className="driver-guide border border-gray-300 rounded-md p-2 flex flex-col gap-1">
+              <div className="flex items-center">
+                <h1 className="text-[12px] w-[50%]">
+                  English Speaking & Understanding Driver
+                </h1>
+                <h1 className="text-[12px] w-[25%]"> 500</h1>
+                <button className="border border-[#dfad08] text-[13px] rounded-sm px-3 py-1 font-[500] cursor-pointer">
+                  Edit
+                </button>
+              </div>
+              <div className="flex items-center">
+                <h1 className="text-[12px] w-[50%]">
+                  English Speaking & Understanding Guide
+                </h1>
+                <h1 className="text-[12px] w-[25%]"> 500</h1>
+                <button className="border border-[#dfad08] text-[13px] rounded-sm px-3 py-1 font-[500] cursor-pointer">
+                  Edit
+                </button>
+              </div>
+            </div>
+
+            <h1 className="my-4">Attraction Activity Detail</h1>
+            <div className="attraction-guide border border-gray-300 rounded-md p-2 flex flex-col gap-1">
+              <div className="flex items-center">
+                <h1 className="text-[12px] w-[50%]">
+                  Travel via Yamuna Expressway :
+                </h1>
+                <h1 className="text-[12px] w-[25%]"> 500</h1>
+              </div>
+              <div className="flex items-center">
+                <h1 className="text-[12px] w-[50%]">
+                  Light and Sound Show, @ Agra Fort- a UNESCO world heritage
+                  site, Agra
+                </h1>
+                <h1 className="text-[12px] w-[25%]"> 500</h1>
+              </div>
+              <div className="flex items-center">
+                <h1 className="text-[12px] w-[50%]">
+                  Light and Sound Show, @ Agra Fort- a UNESCO world heritage
+                  site, Agra
+                </h1>
+                <h1 className="text-[12px] w-[25%]"> 500</h1>
+              </div>
+              <button className="border border-[#dfad08] text-[13px] rounded-sm px-3 py-1 font-[500] cursor-pointer w-[max-content] mx-3 my-2">
+                Modify
+              </button>
+            </div>
+          </div>
+          <div className="col-span-3"></div>
+        </div>
+      </div>
+    </div>
+  );
+}

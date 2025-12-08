@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@import "react-toastify/dist/ReactToastify.css";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  /* --font-sans: var(--font-geist-sans); */
+  /* --font-mono: var(--font-geist-mono); */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #fff;
+    --foreground: #000;
+  }
+}
+
+body {
+  font-family: var(--font-poppins), sans-serif; /* or 'MyFont', sans-serif */
+  background: var(--background);
+  color: var(--foreground);
+}
+
+#__next-turbo {
+  display: none !important;
+}
+
+.biddings-list::-webkit-scrollbar {
+  width: 6px;
+  background-color: #efefef;
+}
+
+/* This styles the scroll "thumb" (the draggable handle) */
+.biddings-list::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 4px;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.password-input::-ms-reveal,
+.password-input::-ms-clear,
+.password-input::-webkit-credentials-auto-fill-button {
+  display: none !important;
+}
+
+
+.font-xs{
+  font-size: 10px;
+}
+.font-sm{
+  font-size: 12px;
+}
+.font-md{
+  font-size: 14px;
+}
+.font-2md{
+  font-size: 16px;
+}

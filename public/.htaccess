@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Handle root path explicitly
+RewriteRule ^$ http://103.248.60.236:4000/ [P,L]
+
+# Handle other paths
+RewriteCond %{REQUEST_URI} !^/uploads
+RewriteCond %{REQUEST_URI} !^/_next/static
+RewriteCond %{REQUEST_URI} !^/_next/image
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ http://103.248.60.236:4000/$1 [P,L]
