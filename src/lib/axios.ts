@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useAuth } from '@/store/auth'
 
 const api = axios.create({
-    baseURL: 'https://api.bookingcabs.in:3002/api',
+    baseURL: 'https://api.bookingcabs.in:3006/api',
     withCredentials: true,
 })
 
